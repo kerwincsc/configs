@@ -1,3 +1,4 @@
+
 (require 'cl)
 
 (when (>= emacs-major-version 24)
@@ -17,6 +18,9 @@
 			  magit
 			  popwin
 			  reveal-in-osx-finder
+			  web-mode
+			  expand-region
+			  iedit
 			  ) "Default packages")
 
 (setq package-selected-packages kerwin/packages)
@@ -47,6 +51,9 @@
 
 ;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
+;; 输入单引号时, 只输入一个而不是一对
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(sp-local-pair 'emacs-lisp-mode "`" nil :actions nil)
 
 (setq auto-mode-alist
       (append
@@ -55,5 +62,7 @@
 
 (require 'popwin)
 (popwin-mode t)
+
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 (provide 'init-packages)

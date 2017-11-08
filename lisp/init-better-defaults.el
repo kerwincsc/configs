@@ -22,6 +22,13 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 15)
 
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  "Highlight enclosing parens."
+  (cond ((looking-at-p "\\s(") (funcall fn))
+	(t (save-excursion
+	     (ignore-errors (backward-up-list))
+	     (funcall fn)))))
+
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 (defun indent-buffer ()
@@ -63,6 +70,10 @@
 
 (require 'dired-x)
 (setq dired-dwin-target t)
+
+(column-number-mode t)
+
+;; ========== defined by myself ==========
 
 
 (provide 'init-better-defaults)
