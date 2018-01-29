@@ -16,7 +16,7 @@ filetype indent on
 set autoread
 
 " 激活鼠标的使用
-set mouse=a
+"set mouse=a
 
 """""""""""""""""""""""""""""""""""""""
 " -> 字体和颜色
@@ -39,7 +39,7 @@ hi CursorColumn guibg=#00ff00
 " -> 代码折叠功能
 """""""""""""""""""""""""""""""""""""""
 " 激活折叠功能
-set foldenable
+"set foldenable
 
 " 设置按照语法格式折叠(可简写 set fdm=XX)
 " 有6种折叠方法:
@@ -49,18 +49,18 @@ set foldenable
 " syntax 用语法高亮来定义折叠
 " diff   对没有更改的文本进行折叠
 " marker 对文中的标志进行折叠
-set foldmethod=manual
+"set foldmethod=manual
 
 " 设置折叠区域的宽度
 " 如果不为 0, 则在屏幕左侧显示一个折叠标识列
 " 分别用 "-" 和 "+" 来表示打开和关闭折叠
-set foldcolumn=0
+"set foldcolumn=0
 
 " 设置折叠层数为3
-setlocal foldlevel=3
+"setlocal foldlevel=3
 
 " 设置为自动关闭折叠
-set foldclose=all
+"set foldclose=all
 
 " 用空格键来代替 zo 和 zc 快捷键实现开关折叠
 " zo O-pen a fold    ( 打开折叠 )
